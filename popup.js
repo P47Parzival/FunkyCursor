@@ -1,27 +1,66 @@
-document.querySelectorAll('.cursor-option').forEach(cursor => {
-    cursor.addEventListener('click', function () {
-        let cursorFile = this.getAttribute('data-cursor');  // Example: "cursors/cursor1.png"
-        let cursorPath = chrome.runtime.getURL(cursorFile); // Get correct local URL
+// document.addEventListener('DOMContentLoaded', function () {
+//   const cursorList = document.getElementById('cursor-list');
 
-        // Save the cursor path in Chrome storage
-        chrome.storage.sync.set({ cursor: cursorPath });
+//   // List of available cursors
+//   const cursors = [
+//     { name: 'Cursor 1', file: 'cursors/cursor1.png' },
+//     { name: 'Cursor 2', file: 'cursors/cursor2.png' },
+//     { name: 'Cursor 3', file: 'cursors/cursor3.png' }
+//   ];
 
-        // Send message to content script to update cursor
-        chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-            if (tabs.length === 0 || tabs[0].url.startsWith("chrome://")) {
-                console.warn("Cannot inject script on a chrome:// page.");
-                return; // Prevent errors
-            }
+//   // Dynamically create cursor options
+//   cursors.forEach(cursor => {
+//     const cursorOption = document.createElement('div');
+//     cursorOption.className = 'cursor-option';
+//     cursorOption.textContent = cursor.name;
+//     cursorOption.addEventListener('click', () => {
+//       chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+//         chrome.tabs.sendMessage(tabs[0].id, { cursor: cursor.file });
+//       });
+//     });
+//     cursorList.appendChild(cursorOption);
+//   });
+// });
 
-            chrome.scripting.executeScript({
-                target: { tabId: tabs[0].id },
-                func: updateCursor,
-                args: [cursorPath]
-            });
-        });
+document.addEventListener('DOMContentLoaded', function () {
+  const cursorList = document.getElementById('cursor-list');
+
+  // List of available cursors
+  const cursors = [
+    { name: 'Cursor 1', file: 'cursors/cursor1.png' },
+    { name: 'Cursor 2', file: 'cursors/cursor2.png' },
+    { name: 'Cursor 3', file: 'cursors/cursor3.png' },
+    { name: 'Cursor 4', file: 'cursors/cursor4.png' },
+    { name: 'Cursor 5', file: 'cursors/cursor5.png' }
+  ];
+
+  // Dynamically create cursor options
+  cursors.forEach(cursor => {
+    const cursorOption = document.createElement('div');
+    cursorOption.className = 'cursor-option';
+
+    // Create an image element
+    const img = document.createElement('img');
+    img.src = cursor.file;
+    img.className = 'cursor-image';
+
+    // Create a text label
+    const text = document.createElement('span');
+    text.textContent = cursor.name;
+    text.className = 'cursor-text';
+
+    // Add event listener to the whole div (both image and text are clickable)
+    cursorOption.addEventListener('click', () => {
+      chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+        chrome.tabs.sendMessage(tabs[0].id, { cursor: cursor.file });
+      });
     });
-});
 
-function updateCursor(cursorUrl) {
-    document.body.style.cursor = `url(${cursorUrl}), auto`;
-}
+    // Append elements to cursorOption div
+    cursorOption.appendChild(img);
+    cursorOption.appendChild(text);
+
+    // Add cursor option to the list
+    cursorList.appendChild(cursorOption);
+  });
+});
