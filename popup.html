@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Custom Cursor</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <h1 style="font-size: x-small;">Select Your Cursor</h1>
-  <div id="cursor-list">
-    <!-- Cursor options will be dynamically added here -->
+  <h2>Select Your Cursor</h2>
+
+  <!-- Default Cursors Section -->
+  <div class="cursor-section">
+    <h3>Default Cursors</h3>
+    <div id="default-cursor-list" class="cursor-grid"></div>
   </div>
+
+  <!-- Minecraft Cursors Section -->
+  <div class="cursor-section">
+    <h3>Minecraft Cursors</h3>
+    <div id="minecraft-cursor-list" class="cursor-grid"></div>
+  </div>
+
   <script src="popup.js"></script>
 </body>
-
 </html>
