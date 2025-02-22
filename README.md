@@ -8,12 +8,6 @@ Transform your browsing experience with **[Your Extension Name]**, a simple yet 
 - ✅ Easy to install and use
 
 ## Installation
-### From Chrome Web Store (Recommended)
-1. Go to the [Chrome Web Store link](#) (Replace `#` with your actual link).
-2. Click **Add to Chrome**.
-3. Click **Add Extension** when prompted.
-4. Enjoy!
-
 ### Manual Installation (Developer Mode)
 1. **Download** the ZIP file from [GitHub](#).
 2. **Extract** the folder.
@@ -23,12 +17,7 @@ Transform your browsing experience with **[Your Extension Name]**, a simple yet 
 6. The extension is now installed!
 
 ## Usage
-[Explain how to use your extension, including any settings or shortcuts.]
-
-## Permissions
-This extension requires the following permissions:
-- 🔹 [Permission 1] - Used for [Reason].
-- 🔹 [Permission 2] - Used for [Reason].
+The usage is as simple as you think, just use it as you use your normal extensions of chrome or edge. 
 
 ## Contributing
 We welcome contributions! To contribute:
@@ -45,4 +34,4 @@ If you have any issues, please open an [issue](#) or contact [Your Email].
 This project is licensed under the **MIT License**. See `LICENSE` for details.
 
 ---
-💡 **Developed by [Your Name]**
+💡 **Developed by [Dhruv Mali]**
