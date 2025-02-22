@@ -16,6 +16,10 @@ Transform your browsing experience with **[Your Extension Name]**, a simple yet 
 5. Click **Load Unpacked** and select the extracted folder.
 6. The extension is now installed!
 
+## Screenshots
+![Screenshot 1](path/to/screenshot1.png)
+![Screenshot 2](path/to/screenshot2.png)
+
 ## Usage
 The usage is as simple as you think, just use it as you use your normal extensions of chrome or edge. 
 
