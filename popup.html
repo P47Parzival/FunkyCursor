@@ -1,26 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Custom Cursor</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <h2>Select Your Cursor</h2>
+  <div class="popup-container">
+    <h2>Select Your Cursor</h2>
 
-  <!-- Default Cursors Section -->
-  <div class="cursor-section">
-    <h3>Default Cursors</h3>
-    <div id="default-cursor-list" class="cursor-grid"></div>
-  </div>
+    <!-- Default Cursors Section -->
+    <div class="cursor-section">
+      <h3>Default Cursors</h3>
+      <div id="default-cursor-list" class="cursor-grid"></div>
+    </div>
 
-  <!-- Minecraft Cursors Section -->
-  <div class="cursor-section">
-    <h3>Minecraft Cursors</h3>
-    <div id="minecraft-cursor-list" class="cursor-grid"></div>
+    <!-- Minecraft Cursors Section -->
+    <div class="cursor-section">
+      <h3>Minecraft Cursors</h3>
+      <div id="minecraft-cursor-list" class="cursor-grid"></div>
+    </div>
+
+    <!-- Guns cursor section -->
+    <div class="cursor-section">
+      <h3>Choose weapon</h3>
+      <h5>Physical</h5>
+      <div id="physical-cursor-list" class="cursor-grid"></div>
+      <h5>Guns</h5>
+      <div id="guns-cursor-list" class="cursor-grid"></div>
+    </div>
+
+    <!-- default cursor from here -->
+    <button id="reset-cursor">Reset to Default</button>
   </div>
 
   <script src="popup.js"></script>
 </body>
+
 </html>
